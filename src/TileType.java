@@ -7,9 +7,9 @@ public enum TileType
     {
         switch (this)
         {
-            case TILE_STRAIGHT:   return 1;
+            case TILE_STRAIGHT:   return 0;
             case TILE_TURN:
-            default:            return 2;
+            default:            return 1;
         }
     }
 }

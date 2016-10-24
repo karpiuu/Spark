@@ -3,7 +3,13 @@
  */
 public class Tile {
 
-    public Tile( TileType tile ) {
+    private TileType type;
 
+    public Tile( TileType t ) {
+        type = t;
+    }
+
+    public TileType getType() {
+        return type;
     }
 }

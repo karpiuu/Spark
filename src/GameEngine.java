@@ -15,6 +15,7 @@ public class GameEngine {
     public GameEngine() {
         element = new Tile[SIZE_X][SIZE_Y];
         imageContainer = new ImageContainer();
+        generate();
     }
 
     public void generate() {
@@ -28,9 +29,8 @@ public class GameEngine {
     public void draw(Graphics g) {
         for(int i = 0; i < 40; i++) {
             for (int j = 0; j < 40; j++) {
-                g.drawImage(imageContainer.tile.get(element[i][j].toInteger()),
-                            imageContainer.tile.get().getWidth(element[i][j].toInteger()) * i,
-                            imageContainer.tile.get().getHeight(element[i][j].toInteger()) * j,
+                g.drawImage(imageContainer.tile.get(element[i][j].getType().toInteger()),
+                            50 * i, 50 * j,
                             (ImageObserver) null);
             }
         }
