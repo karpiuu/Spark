@@ -3,8 +3,7 @@
  */
 public class Tile {
 
-    public Tile( Tile tile )
-    {
+    public Tile( TileType tile ) {
 
     }
 }

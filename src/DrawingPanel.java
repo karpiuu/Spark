@@ -10,7 +10,11 @@ import javax.swing.ImageIcon;
 import javax.swing.JPanel;
 
 public class DrawingPanel extends JPanel {
+
+    private GameEngine gameEngine;
+
     public DrawingPanel() {
+        gameEngine = new GameEngine();
     }
 
     public void paintComponent(Graphics g) {
@@ -23,12 +27,7 @@ public class DrawingPanel extends JPanel {
         RenderingHints rh = new RenderingHints(RenderingHints.KEY_ANTIALIASING, RenderingHints.VALUE_ANTIALIAS_ON);
         rh.put(RenderingHints.KEY_RENDERING, RenderingHints.VALUE_RENDER_QUALITY);
         g2d.setRenderingHints(rh);
-        ImageIcon ii = new ImageIcon("img/tile.png");
-        Image img = ii.getImage();
 
-        for(int i = 0; i < 16; ++i) {
-            g.drawImage(img, ii.getIconWidth() * i, 400, (ImageObserver)null);
-        }
-
+        gameEngine.draw(g);
     }
 }
