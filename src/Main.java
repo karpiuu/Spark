@@ -17,8 +17,8 @@ public class Main {
 
         while( game_run ) {
 
-            mainFrame.drawingPanel.repaint();
             mainFrame.drawingPanel.gameEngine.update();
+            mainFrame.drawingPanel.repaint();
 
             next_game_tick += SKIP_TICKS;
             sleep_time = next_game_tick - System.currentTimeMillis();

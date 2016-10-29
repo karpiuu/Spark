@@ -19,9 +19,12 @@ public class GameEngine {
     }
 
     public void generate() {
+        int random;
+
         for(int i = 0; i < SIZE_X; i++) {
             for(int j = 0; j < SIZE_Y; j++) {
-                element[i][j] = new Tile( ( ((i+j) % 2) == 0 ? TileType.TILE_STRAIGHT : TileType.TILE_TURN ) );
+                random = RandomGenerator.generator.nextInt(2);
+                element[i][j] = new Tile( ( (random % 2) == 0 ? TileType.TILE_STRAIGHT : TileType.TILE_TURN ) );
             }
         }
 
